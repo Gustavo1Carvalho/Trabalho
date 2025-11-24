@@ -1,0 +1,758 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seleções de filmes e séries românticas para maratonas aconchegantes">
+    <title>Noite Perfeita: Filmes e Séries para Amar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== Variáveis CSS ========== */
+        :root {
+            --rosa-claro: #F8E7EC;
+            --creme: #FFF6F0;
+            --coral: #E85A8C;
+            --roxo-suave: #B57FB3;
+            --texto-escuro: #333;
+            --texto-medio: #666;
+            --branco: #fff;
+            --sombra: rgba(0, 0, 0, 0.1);
+            
+            --fonte-titulo: 'Poppins', sans-serif;
+            --fonte-corpo: 'Inter', system-ui, sans-serif;
+            
+            --espacamento: 1.5rem;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        /* ========== Reset e Base ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--fonte-corpo);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+            background-color: var(--creme);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* ========== Header ========== */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px var(--sombra);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem var(--espacamento);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--coral);
+            text-decoration: none;
+        }
+        
+        nav {
+            display: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--texto-escuro);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--coral);
+        }
+        
+        .cta-button {
+            background-color: var(--coral);
+            color: var(--branco);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background-color: #d14976;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 90, 140, 0.3);
+        }
+        
+        /* Menu hambúrguer */
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--coral);
+            margin: 5px 0;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+        
+        /* ========== Hero Section ========== */
+        .hero {
+            background: linear-gradient(135deg, rgba(248, 231, 236, 0.95), rgba(181, 127, 179, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23F8E7EC" width="1200" height="600"/><circle cx="200" cy="100" r="80" fill="%23FFE0EC" opacity="0.5"/><circle cx="1000" cy="400" r="120" fill="%23E8D5E8" opacity="0.4"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem var(--espacamento) 4rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--texto-escuro);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--texto-medio);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        /* ========== Container Principal ========== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem var(--espacamento);
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--texto-escuro);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-intro {
+            text-align: center;
+            color: var(--texto-medio);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* ========== Cards de Filmes ========== */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .movie-card {
+            background-color: var(--branco);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px var(--sombra);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .movie-poster {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        .movie-card h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--texto-escuro);
+            margin-bottom: 0.5rem;
+        }
+        
+        .movie-card p {
+            color: var(--texto-medio);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .movie-card .btn-saiba-mais {
+            background-color: var(--rosa-claro);
+            color: var(--coral);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+            align-self: flex-start;
+        }
+        
+        .movie-card .btn-saiba-mais:hover {
+            background-color: var(--coral);
+            color: var(--branco);
+        }
+        
+        /* ========== Seção de Séries ========== */
+        .series-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .series-item {
+            background-color: var(--branco);
+            border-left: 4px solid var(--coral);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px var(--sombra);
+            transition: var(--transition);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .series-poster {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
+        .series-content {
+            flex: 1;
+        }
+        
+        .series-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 15px rgba(232, 90, 140, 0.2);
+        }
+        
+        .series-item h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--coral);
+            margin-bottom: 0.5rem;
+        }
+        
+        .series-item p {
+            color: var(--texto-medio);
+        }
+        
+        /* ========== Como Escolher ========== */
+        .escolher-container {
+            background: linear-gradient(135deg, var(--rosa-claro), #F0E0F0);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px var(--sombra);
+        }
+        
+        .escolher-container h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: var(--texto-escuro);
+            margin-bottom: 1.5rem;
+        }
+        
+        .dicas-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .dica-item {
+            background-color: var(--branco);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--coral);
+        }
+        
+        .dica-item strong {
+            color: var(--coral);
+        }
+        
+        /* ========== Depoimentos ========== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--branco);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px var(--sombra);
+            text-align: center;
+        }
+        
+        .stars {
+            color: #FFB800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--texto-medio);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--coral);
+        }
+        
+        /* ========== CTA Final ========== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--coral), var(--roxo-suave));
+            padding: 4rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            color: var(--branco);
+        }
+        
+        .cta-final h2 {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-final p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-final .cta-button {
+            background-color: var(--branco);
+            color: var(--coral);
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+        
+        .cta-final .cta-button:hover {
+            background-color: var(--creme);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        /* ========== Footer ========== */
+        footer {
+            background-color: var(--texto-escuro);
+            color: var(--branco);
+            padding: 3rem var(--espacamento) 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--branco);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--coral);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--coral);
+            transform: translateY(-3px);
+        }
+        
+        .footer-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1.5rem;
+        }
+        
+        /* ========== Media Queries ========== */
+        
+        /* Tablet */
+        @media (min-width: 768px) {
+            nav {
+                display: block;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+            
+            .movies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .series-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .movies-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== Header ========== -->
+    <header role="banner">
+        <div class="header-container">
+            <a href="#" class="logo" aria-label="Página inicial">💕 Noite Perfeita</a>
+            
+            <nav role="navigation" aria-label="Menu principal">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#filmes">Filmes</a></li>
+                    <li><a href="#series">Séries</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#recomendacoes" class="cta-button">Ver Recomendações</a>
+            
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" id="home" role="banner">
+        <h1>Noite Perfeita: Filmes e Séries para Amar</h1>
+        <p>Seleções curadas para maratonas românticas, encontros e tardes aconchegantes.</p>
+        <a href="#filmes" class="cta-button">Ver Recomendações</a>
+    </section>
+    
+    <!-- ========== Main Content ========== -->
+    <main role="main">
+        <!-- Introdução -->
+        <p class="section-intro">
+            Aqui estão filmes e séries escolhidos para quem ama romance, emoção e boas histórias. Role e encontre a próxima produção para assistir.
+        </p>
+        
+        <!-- ========== Seção de Filmes ========== -->
+        <section id="filmes" aria-labelledby="filmes-title">
+            <h2 class="section-title" id="filmes-title">🎬 Indicações de Filmes</h2>
+            
+            <div class="movies-grid">
+                <!-- Filme 1 -->
+                <article class="movie-card">
+                    <img src="filme_3.jpg" alt="Pôster do filme E o Vento Levou" class="movie-poster">
+                    <h3>E o Vento Levou (1939)</h3>
+                    <p>Romance épico ambientado na Guerra Civil Americana; história intensa e dramática.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+                
+                <!-- Filme 2 -->
+                <article class="movie-card">
+                    <img src="filme_4.jpg" alt="Pôster do filme Bonequinha de Luxo" class="movie-poster">
+                    <h3>Bonequinha de Luxo (1961)</h3>
+                    <p>Audrey Hepburn brilhante em uma história charmosa e elegante.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+                
+                <!-- Filme 3 -->
+                <article class="movie-card">
+                    <img src="filme_5.jpg" alt="Pôster do filme Orgulho e Preconceito" class="movie-poster">
+                    <h3>Orgulho e Preconceito (2005)</h3>
+                    <p>Adaptação do romance de Jane Austen; visual lindo e história que apaixona.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+                
+                <!-- Filme 4 -->
+                <article class="movie-card">
+                    <img src="Captura de tela 2025-11-24 092028.png" alt="Pôster do filme Diário de Uma Paixão" class="movie-poster">
+                    <h3>Diário de Uma Paixão</h3>
+                    <p>Romance intenso e marcante.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+                
+                <!-- Filme 5 -->
+                <article class="movie-card">
+                    <img src="julieta.png" alt="Pôster do filme Cartas Para Julieta" class="movie-poster">
+                    <h3>Cartas Para Julieta</h3>
+                    <p>Romance leve na Itália, perfeito para quem gosta de histórias fofas.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+                
+                <!-- Filme 6 -->
+                <article class="movie-card">
+                    <img src="filme_2.jpg" alt="Pôster do filme Como Perder um Homem em 10 Dias" class="movie-poster">
+                    <h3>Como Perder um Homem em 10 Dias</h3>
+                    <p>Divertido, cheio de confusões amorosas.</p>
+                    <a href="#" class="btn-saiba-mais">Saiba mais</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- ========== Seção de Séries ========== -->
+        <section id="series" aria-labelledby="series-title">
+            <h2 class="section-title" id="series-title">📺 Séries Imperdíveis</h2>
+            
+            <div class="series-list">
+                <!-- Série 1 -->
+                <article class="series-item">
+                    <img src="anne.png" alt="Pôster da série Anne with an E" class="series-poster">
+                    <div class="series-content">
+                        <h3>Anne with an E</h3>
+                        <p>Série sensível e poética sobre amadurecimento, amizade, descoberta e amor.</p>
+                    </div>
+                </article>
+                
+                <!-- Série 2 -->
+                <article class="series-item">
+                    <img src="serie.png" alt="Pôster da série Gilmore Girls" class="series-poster">
+                    <div class="series-content">
+                        <h3>Gilmore Girls</h3>
+                        <p>Série leve e aconchegante, com muitos relacionamentos e diálogos inteligentes.</p>
+                    </div>
+                </article>
+                
+                <!-- Série 3 -->
+                <article class="series-item">
+                    <img src="serie2.png" alt="Pôster da série Bridgerton" class="series-poster">
+                    <div class="series-content">
+                        <h3>Bridgerton</h3>
+                        <p>Drama romântico de época, famoso pelos figurinos e histórias apaixonantes.</p>
+                    </div>
+                </article>
+                
+                <!-- Série 4 -->
+                <article class="series-item">
+                    <img src="serie3.png" alt="Pôster da série Friends" class="series-poster">
+                    <div class="series-content">
+                        <h3>Friends</h3>
+                        <p>Acompanha um grupo de amigos vivendo situações engraçadas, românticas e do dia a dia.</p>
+                    </div>
+                </article>
+                
+                <!-- Série 5 -->
+                <article class="series-item">
+                    <img src="filme_1.jpg" alt="Pôster da série Sex and the City" class="series-poster">
+                    <div class="series-content">
+                        <h3>Sex and the City</h3>
+                        <p>Focada em amizade, amor, moda e vida adulta; rotina de quatro amigas em Nova York.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- ========== Como Escolher ========== -->
+        <section id="sobre" aria-labelledby="escolher-title">
+            <h2 class="section-title" id="escolher-title">💡 Como Escolher?</h2>
+            
+            <div class="escolher-container">
+                <h3>Dicas para a Escolha Perfeita</h3>
+                <div class="dicas-list">
+                    <div class="dica-item">
+                        <strong>Para uma noite romântica:</strong> Escolha "Diário de Uma Paixão" ou "Orgulho e Preconceito" — perfeitos para aquele clima apaixonado.
+                    </div>
+                    <div class="dica-item">
+                        <strong>Se quer chorar:</strong> "Diário de Uma Paixão" é garantia de emoção intensa e lenços à mão.
+                    </div>
+                    <div class="dica-item">
+                        <strong>Se quer rir:</strong> "Como Perder um Homem em 10 Dias" ou "Friends" são ideais para boas gargalhadas.
+                    </div>
+                    <div class="dica-item">
+                        <strong>Para maratona aconchegante:</strong> "Gilmore Girls" ou "Anne with an E" vão te envolver por horas.
+                    </div>
+                    <div class="dica-item">
+                        <strong>Clássicos inesquecíveis:</strong> "E o Vento Levou" e "Bonequinha de Luxo" são atemporais e imperdíveis.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== Depoimentos ========== -->
+        <section aria-labelledby="depoimentos-title">
+            <h2 class="section-title" id="depoimentos-title">⭐ O Que Dizem Nossos Usuários</h2>
+            
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Melhor seleção para maratonar! Encontrei tantas opções que nem sabia por onde começar. Amei!"</p>
+                    <p class="testimonial-author">— Mariana S.</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Perfeito para planejar encontros românticos em casa. As dicas de escolha ajudaram muito!"</p>
+                    <p class="testimonial-author">— Carlos E.</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Site lindo e recomendações incríveis. Já assisti 3 filmes daqui e todos foram maravilhosos!"</p>
+                    <p class="testimonial-author">— Júlia M.</p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- ========== CTA Final ========== -->
+        <section class="cta-final" id="recomendacoes" aria-labelledby="cta-title">
+            <h2 id="cta-title">Pronto para Sua Próxima Maratona?</h2>
+            <p>Monte sua lista personalizada e receba recomendações direto no seu e-mail!</p>
+            <a href="#contato" class="cta-button">Montar Minha Lista</a>
+        </section>
+    </main>
+    
+    <!-- ========== Footer ========== -->
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#filmes">Filmes</a>
+            <a href="#series">Séries</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <span>📷</span>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <span>📘</span>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+                <span>🐦</span>
+            </a>
+        </div>
+        
+        <p class="footer-note">
+            © 2025 Noite Perfeita. Todos os direitos reservados.<br>
+            Imagens meramente ilustrativas. Conteúdo para fins educacionais.
+        </p>
+    </footer>
+    
+    <!-- Script simples para menu hambúrguer -->
+    <script>
+        // Funcionalidade do menu hambúrguer (para mobile)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                nav.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
+        
+        // Scroll suave para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
